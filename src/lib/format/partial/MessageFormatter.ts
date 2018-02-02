@@ -12,7 +12,7 @@ import {ExtensionFormatter} from "./ExtensionFormatter";
 import {OneofFormatter} from "./OneofFormatter";
 import {TplEngine} from "../../TplEngine";
 
-export const OBJECT_TYPE_NAME = 'AsObject';
+export const OBJECT_TYPE_NAME = 'IAsObject';
 
 export namespace MessageFormatter {
 

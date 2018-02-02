@@ -7,7 +7,7 @@ const EnumFormatter_1 = require("./EnumFormatter");
 const ExtensionFormatter_1 = require("./ExtensionFormatter");
 const OneofFormatter_1 = require("./OneofFormatter");
 const TplEngine_1 = require("../../TplEngine");
-exports.OBJECT_TYPE_NAME = 'AsObject';
+exports.OBJECT_TYPE_NAME = 'IAsObject';
 var MessageFormatter;
 (function (MessageFormatter) {
     MessageFormatter.defaultMessageType = JSON.stringify({

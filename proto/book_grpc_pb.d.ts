@@ -15,8 +15,8 @@ interface IGetBook {
     path: string; // "/com.book.BookService/GetBook"
     requestStream: boolean; // false
     responseStream: boolean; // false
-    requestType: book_pb.GetBookRequest,
-    responseType: book_pb.Book,
+    requestType: book_pb.GetBookRequest;
+    responseType: book_pb.Book;
     requestSerialize: (arg: book_pb.GetBookRequest) => Buffer;
     requestDeserialize: (buffer: Uint8Array) => book_pb.GetBookRequest;
     responseSerialize: (arg: book_pb.Book) => Buffer;
@@ -26,8 +26,8 @@ interface IGetBooksViaAuthor {
     path: string; // "/com.book.BookService/GetBooksViaAuthor"
     requestStream: boolean; // false
     responseStream: boolean; // true
-    requestType: book_pb.GetBookViaAuthor,
-    responseType: book_pb.Book,
+    requestType: book_pb.GetBookViaAuthor;
+    responseType: book_pb.Book;
     requestSerialize: (arg: book_pb.GetBookViaAuthor) => Buffer;
     requestDeserialize: (buffer: Uint8Array) => book_pb.GetBookViaAuthor;
     responseSerialize: (arg: book_pb.Book) => Buffer;
@@ -37,8 +37,8 @@ interface IGetGreatestBook {
     path: string; // "/com.book.BookService/GetGreatestBook"
     requestStream: boolean; // true
     responseStream: boolean; // false
-    requestType: book_pb.GetBookRequest,
-    responseType: book_pb.Book,
+    requestType: book_pb.GetBookRequest;
+    responseType: book_pb.Book;
     requestSerialize: (arg: book_pb.GetBookRequest) => Buffer;
     requestDeserialize: (buffer: Uint8Array) => book_pb.GetBookRequest;
     responseSerialize: (arg: book_pb.Book) => Buffer;
@@ -48,8 +48,8 @@ interface IGetBooks {
     path: string; // "/com.book.BookService/GetBooks"
     requestStream: boolean; // true
     responseStream: boolean; // true
-    requestType: book_pb.GetBookRequest,
-    responseType: book_pb.Book,
+    requestType: book_pb.GetBookRequest;
+    responseType: book_pb.Book;
     requestSerialize: (arg: book_pb.GetBookRequest) => Buffer;
     requestDeserialize: (buffer: Uint8Array) => book_pb.GetBookRequest;
     responseSerialize: (arg: book_pb.Book) => Buffer;
@@ -62,8 +62,7 @@ export interface IBookServiceClient {
     getBooksViaAuthor(request: book_pb.GetBookViaAuthor, metadata?: grpc.Metadata): grpc.ClientReadableStream;
     getGreatestBook(callback: (error: Error | null, response: book_pb.Book) => void): grpc.ClientWritableStream;
     getGreatestBook(callback: (error: Error | null, metadata: grpc.Metadata, response: book_pb.Book) => void): grpc.ClientWritableStream;
-    getBooks(): grpc.ClientDuplexStream;
-    getBooks(metadata: grpc.Metadata): grpc.ClientDuplexStream;
+    getBooks(metadata?: grpc.Metadata): grpc.ClientDuplexStream;
 }
 
 export const BookServiceService: IBookServiceService;

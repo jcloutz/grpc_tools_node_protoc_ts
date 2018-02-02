@@ -17,8 +17,8 @@ interface I{{{methodName}}} {
     path: string; // "/{{{packageName}}}.{{{serviceName}}}/{{{methodName}}}"
     requestStream: boolean; // {{{requestStream}}}
     responseStream: boolean; // {{{responseStream}}}
-    requestType: {{{requestTypeName}}},
-    responseType: {{{responseTypeName}}},
+    requestType: {{{requestTypeName}}};
+    responseType: {{{responseTypeName}}};
     requestSerialize: (arg: {{{requestTypeName}}}) => Buffer;
     requestDeserialize: (buffer: Uint8Array) => {{{requestTypeName}}};
     responseSerialize: (arg: {{{responseTypeName}}}) => Buffer;
@@ -40,8 +40,7 @@ export interface I{{{serviceName}}}Client {
     {{lcFirst methodName}}(request: {{{requestTypeName}}}, metadata?: grpc.Metadata): grpc.ClientReadableStream;
         {{/eq}}
         {{#eq type "ClientDuplexStream"}}
-    {{lcFirst methodName}}(): grpc.ClientDuplexStream;
-    {{lcFirst methodName}}(metadata: grpc.Metadata): grpc.ClientDuplexStream;
+    {{lcFirst methodName}}(metadata?: grpc.Metadata): grpc.ClientDuplexStream;
         {{/eq}}
     {{/each}}
 }

@@ -4,6 +4,11 @@
         "tslint:recommended"
     ],
     "jsRules": {},
-    "rules": {},
+    "rules": {
+        "max-line-length": [false],
+        "max-classes-per-file": [false],
+        "no-namespace": false,
+        "unified-signatures": false
+    },
     "rulesDirectory": []
 }
